@@ -3152,7 +3152,7 @@ jQuery(document).ready(function( $ ){
   	e.preventDefault();
   	var parent 	=	$(this).closest('.expand-next-row');
     $(this).find('.plus-sign').toggle();  
-  	parent.next('tr').toggle();
+  	parent.nextUntil('.RowClass2').toggle();
   })
 });</script>
 <!-- end Simple Custom CSS and JS -->
