@@ -3151,8 +3151,16 @@ jQuery(document).ready(function( $ ){
   btn2.on('click' , function(e){
   	e.preventDefault();
   	var parent 	=	$(this).closest('.expand-next-row');
-    $(this).find('.plus-sign').toggle();  
-  	parent.nextUntil('.RowClass2').toggle();
+    var parent_clss = $('.expand-next-row').attr('class');
+    var parent_clss_css = $('.expand-next-row span:first-child').css("display");
+    $(this).find('.plus-sign').toggle(); 
+    if (parent_clss_css == 'none') {
+      parent.nextUntil('.RowClass2').css("display","none");
+      console.log(parent_clss);
+    }else{
+      parent.nextUntil('.RowClass2').toggle();
+      console.log(parent_clss);
+    }
   })
 });</script>
 <!-- end Simple Custom CSS and JS -->
