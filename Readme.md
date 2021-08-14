@@ -22,10 +22,10 @@ In this example, python script will use Excel file named 'LstMetadataprofiltest_
 ## Row Colors Formatting:
 - In Python script, Following colors are used for different levels of hierarchy(Rows).
     - color_RowClass1 = '#77a8a8' , Header Row. This color code is used for headings '#77a8a8'.
-    - color_RowClass2 = '#eaece5' , Parent Row(In Excel file, First cell without decimal). This color code is used for headings '#eaece5'.
-    - color_RowClass3 = '#ddeedd' , In Excel file, First cell with One Decimel. This color code is used for headings '#eaece5'.
-    - color_RowClass4 = '#c0ded9' , In Excel file, First cell with Two Decimel. This color code is used for headings '#c0ded9'.
-    - color_RowClass5 = '#3b3a30' , In Excel file, First cell with Three Decimel. This color code is used for headings '#3b3a30'.
+    - color_RowClass2 = '#eaece5' , Parent Row(In Excel file, First cell without decimal). This color code is used '#eaece5'.
+    - color_RowClass3 = '#ddeedd' , In Excel file, First cell with One Decimel. This color code is used '#eaece5'.
+    - color_RowClass4 = '#c0ded9' , In Excel file, First cell with Two Decimel. This color code is used '#c0ded9'.
+    - color_RowClass5 = '#3b3a30' , In Excel file, First cell with Three Decimel. This color code is used '#3b3a30'.
 
 ## Requirements:
 - The First column should only contain numbers (digits) and decimal points (.). 
