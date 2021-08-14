@@ -2,7 +2,7 @@
 
 ## This Repository contains python script that can be used to generate HTML table using either xlsx or csv file.
 
-### Note: It is recommended to use xlsx file for generating tables in order to avoid encoding issues.
+#### Note: It is recommended to use xlsx file for generating tables in order to avoid encoding issues.
 
 
 ## File paths:
@@ -44,4 +44,4 @@ x.x (list item two with plus sign because it contains one child)
 x.x.x (child of list item two)
 ```
 
-## 'LstMetadataprofiltest_formatted.xlsx' (Excel File) can be used as a reference to generate tables correctly, However 'LstMetadataprofiltest.csv' contains same data but some errors that should be avoided. You can compare both files to see the difference.
+#### 'LstMetadataprofiltest_formatted.xlsx' (Excel File) can be used as a reference to generate tables correctly, However 'LstMetadataprofiltest.csv' contains same data but some errors that should be avoided. You can compare both files to see the difference.
