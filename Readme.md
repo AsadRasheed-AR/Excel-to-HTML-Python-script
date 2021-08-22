@@ -44,4 +44,33 @@ x.x (list item two with plus sign because it contains one child)
 x.x.x (child of list item two)
 ```
 
+## Necessary Files To Run The Project:
+
+#### Note: The project requires three files to run successfully, First one is the html file in which the python script will add table. Second one is the Excel or CSV file which python script will use to generate table and the third one is the python script file itself which contains the code for parsing Excel file into Html. An Example related to this repository is given below:
+
+- HTML File : example-page.html -> python scrip will use this file and add the newly generated table into this file.
+- LstMetadataprofiltest_formatted.xlsx -> Python script will use this file to generate table and then replace the newly generated table in the html file.
+- Deliverable.py -> Python script which contains the code for Excel to Html Parsing.
+
+## Requirements (Dependencies):
+
+- python==3.8.3
+- beautifulsoup4==4.9.1
+- numpy==1.18.5
+- pandas==1.0.5
+
+## How to run the code:
+
+#### Note: If the html and excel file is in the same directory then only the name of the files can be used instead of complete path, For Example,
+
+```
+python Deliverable.py --html example-page.html --excel LstMetadataprofiltest_formatted.xlsx
+```
+
+#### Note: If the html and excel file is not in the same directory then complete path for the files should provide to run the script, For Example,
+
+```
+python Deliverable.py --html E:\<path to html file>\example-page.html --excel E:\<path to excel file>\LstMetadataprofiltest_formatted.xlsx
+```
+
 #### 'LstMetadataprofiltest_formatted.xlsx' (Excel File) can be used as a reference to generate tables correctly, However 'LstMetadataprofiltest.csv' contains same data but some errors that should be avoided. You can compare both files to see the difference.
