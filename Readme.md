@@ -73,7 +73,7 @@ python Deliverable.py -html example-page.html -excel LstMetadataprofiltest_forma
 #### Note: If the html and excel file is not in the same directory then complete path for the files should provide to run the script, For Example,
 
 ```
-python Deliverable.py --html E:\<path to html file>\example-page.html --excel E:\<path to excel file>\LstMetadataprofiltest_formatted.xlsx
+python Deliverable.py --html E:\<path to html file>\example-page.html --excel E:\<path to excel file>\LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
 ```
 
 #### 'LstMetadataprofiltest_formatted.xlsx' (Excel File) can be used as a reference to generate tables correctly, However 'LstMetadataprofiltest.csv' contains same data but some errors that should be avoided. You can compare both files to see the difference.
