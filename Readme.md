@@ -58,14 +58,17 @@ x.x.x (child of list item two)
 - beautifulsoup4==4.9.1
 - numpy==1.18.5
 - pandas==1.0.5
+- argparse==1.1
+- sys==3.8.3
 
 ## How to run the code:
 
 #### Note: If the html and excel file is in the same directory then only the name of the files can be used instead of complete path, For Example,
 
 ```
-python Deliverable.py --html example-page.html --excel LstMetadataprofiltest_formatted.xlsx
+python Deliverable.py -html example-page.html -excel LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
 ```
+#### Where 0,1,33,34,35 are the required columns, You can pass required column's numbers as comma delimited numbers but 0 is mandatory column because it contains information regarding formatting of rows
 
 #### Note: If the html and excel file is not in the same directory then complete path for the files should provide to run the script, For Example,
 

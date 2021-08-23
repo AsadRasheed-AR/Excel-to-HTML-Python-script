@@ -7,8 +7,8 @@ from typing import cast
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
-import re
-import bs4
+import argparse
+import sys
 
 
 
@@ -79,8 +79,23 @@ def getClassname(number_of_dec,next_number_of_dec,cellValue):
                         <td class="">{cellValue}'''
 
 
+# Initialize parser
+parser = argparse.ArgumentParser()
+ 
+# Adding optional argument
+parser.add_argument("-html", "--HTML", help = "HTML File complete Path with extension i.e C:\<path>\example=page.html" , required=True)
+parser.add_argument("-excel", "--EXCEL", help = "EXCEL File complete Path with extension i.e C:\<path>\LstMetadataprofiltest_formatted.xlsx" , required=True)
+parser.add_argument('-config', '--CONFIG', help='delimited list input i.e 0,1,33,34,35',  type=lambda s: [int(item) for item in s.split(',')] , required=True)
+ 
+# Read arguments from command line
+args = parser.parse_args()
+
+if not args.HTML or not args.EXCEL or not args.CONFIG:
+    print('-html and -excel arguments are required, Please see the Readme File')
+    sys.exit(1)
+
 #Read orignal html file, for embedding new table
-file_path = 'example-page.html'
+file_path = args.HTML
 with open(file_path) as fp:
     soup = BeautifulSoup(fp, 'html.parser')
 
@@ -88,7 +103,7 @@ with open(file_path) as fp:
 
 
 #Input File (Excel or CSV) to parse for creating html Table.
-filename = 'LstMetadataprofiltest_formatted.xlsx'
+filename = args.EXCEL
 
 if '.csv' in filename:
     #Read csv to create html table
@@ -98,13 +113,14 @@ elif '.xlsx' in filename:
     df = pd.read_excel(filename,header=None,encoding= "ISO-8859-1")
 
 df = df[df[len(df.columns)-1] != 1]  #Remove rows based on column values i.e If Last Column (Remove_Rows) value is 1 remove complete row ignore.
-df = df[[0,1,33,34,35]]              #Select the specific columns (including first column that defines the hierarchy) to create table
+# df = df[[0,1,33,34,35]]              #Select the specific columns (including first column that defines the hierarchy) to create table
+df = df[args.CONFIG]              #Select the specific columns (including first column that defines the hierarchy) to create table
 df = df.dropna(how='all')            #Select the empty rows
 df = df.reset_index(drop=True)       #Remove the empty rows
 
 
 #Choose columns with data and ignore the class column
-sub_set_df_fhtml = df[[1,33,34,35]]     #Select Columns that contain data excluding first column that contains foramtting info
+sub_set_df_fhtml = df[args.CONFIG[1:]]     #Select Columns that contain data excluding first column that contains foramtting info
 
 #Replace nan values with " "
 sub_set_df_fhtml = sub_set_df_fhtml.replace(np.nan, '', regex=True)
