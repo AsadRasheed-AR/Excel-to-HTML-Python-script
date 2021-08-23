@@ -4332,29 +4332,6 @@ End of comment */
         /* Default comment here */
 
         jQuery(document).ready(function ($) {
-            // Your code in here
-            // var btn 	=	$('.plus-sign');
-            // btn.on('click' , function(e){
-            // 	e.preventDefault();
-            // 	var parent 	=	$(this).closest('.expand-next-row');
-            // 	parent.next('tr').toggle();
-            // })
-            //   var btn2 	=	$('.expand-next-row td:first-child');
-            //   btn2.on('click' , function(e){
-            //   	e.preventDefault();
-            //   	var parent 	=	$(this).closest('.expand-next-row');
-            //     var parent_clss = $('.expand-next-row').attr('class');
-            //     var parent_clss_css = $('.expand-next-row span:first-child').css("display");
-            //     $(this).find('.plus-sign').toggle(); 
-            //     if (parent_clss_css == 'none') {
-            //       parent.nextUntil('.RowClass2').css("display","none");
-            //       console.log(parent_clss);
-            //     }else{
-            //       parent.nextUntil('.RowClass2').toggle();
-            //       console.log(parent_clss);
-            //     }
-            //   })
-            // });
             var btn2 = $('.expand-next-row td:first-child');
             btn2.on('click', function (e) {
                 e.preventDefault();
@@ -4362,13 +4339,8 @@ End of comment */
                 var parent_clss = $('.expand-next-row').attr('class');
                 var parent_clss_css = $('.expand-next-row span:first-child').css("display");
                 $(this).find('.plus-sign').toggle();
-                // if (parent_clss_css == 'none') {
-                //   parent.nextUntil('.RowClass2').css("display","none");
-                //   console.log(parent_clss);
-                // }else{
                 parent.nextUntil('.RowClass2').toggle();
                 console.log(parent_clss);
-                // }
             })
         });
     </script>

@@ -27,11 +27,11 @@ def hasNumbers(inputString):
 
 
 #Row with plus sign
-#Html to generate that could expand by clicking on (+) sign.
-expand_next_row = '<tr class="MDrow1 expand-next-row"><td class="MDrow1"><span class="plus-sign">+</span><span class="plus-sign" style="display: none;">–</span>'
+#Example Html to generate that could expand by clicking on (+) sign.
+#expand_next_row = '<tr class="MDrow1 expand-next-row"><td class="MDrow1"><span class="plus-sign">+</span><span class="plus-sign" style="display: none;">–</span>'
 
-#Row next to plus sign
-expandable_row = '<tr class="expandable-row"><td class="MDrow1">'
+#Example Row next to plus sign
+#expandable_row = '<tr class="expandable-row"><td class="MDrow1">'
 
 
 #Function to get class name that can be used for fomatting( background color, text color exapandable )
