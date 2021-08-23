@@ -41,24 +41,42 @@ def getClassname(number_of_dec,next_number_of_dec,cellValue):
     if(hasNumbers(cellValue)):
         if ((number_of_dec == 0)):                                     #Whole Number
             if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 RowClass2 expand-next-row" style="background-color:{color_RowClass2}" ><td class="MDrow1"><span class="plus-sign" style="cursor : pointer;">+</span><span class="plus-sign" style="display: none;">–</span>'
-            return f'<tr class="MDrow RowClass2" style="background-color:{color_RowClass2}"><td class="MDrow1">'
+                return  '''<tr class="MDrow1 RowClass2 expand-next-row"> 
+                                <td class="MDrow1">
+                                    <span class="plus-sign">+</span>
+                                    <span class="plus-sign" style="display: none;">–</span>'''
+            return  '''<tr class="MDrow RowClass2">
+                            <td class="MDrow1">'''
+
         elif number_of_dec == 1:                                       #One Decimel
-            if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass3" style="display: none; background-color:{color_RowClass3}"><td class="MDrow1"><span class="plus-sign" style="display: none, cursor : pointer;;">+</span><span class="plus-sign">–</span>'
-            return f'<tr class="expandable-row RowClass3" style="display: none; background-color:{color_RowClass3}"><td class="MDrow1">'
+            if (number_of_dec < next_number_of_dec):                   #If Row has Child Rows make it expandable
+                return '''<tr class="MDrow1 expandable-row expand-next-row RowClass3">
+                            <td class="MDrow1">
+                                <span class="plus-sign" style="display: none;">+ </span>
+                                <span class="plus-sign">– </span>'''
+            return '''<tr class="expandable-row RowClass3">
+                        <td class="MDrow1">'''
         elif number_of_dec == 2:                                       #Two Decimel
-            if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass4" style="display: none; background-color:{color_RowClass4}"><td class="MDrow1"><span class="plus-sign" style="display: none , cursor : pointer;;">+</span><span class="plus-sign">–</span>'
-            return f'<tr class="expandable-row RowClass4" style="display: none; background-color:{color_RowClass4}"><td class="MDrow4">'
+            if (number_of_dec < next_number_of_dec):                   #If Row has Child Rows make it expandable
+                return '''<tr class="MDrow1 expandable-row expand-next-row RowClass4">
+                            <td class="MDrow1">
+                                <span class="plus-sign" style="display: none;">+ </span>
+                                <span class="plus-sign">– </span>'''
+            return '''<tr class="expandable-row RowClass4">
+                        <td class="MDrow4">'''
         elif number_of_dec == 3:                                       #Three Decimel
-            if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass5" style="display: none; color:#fff; background-color:{color_RowClass5}" ><td class="MDrow1"><span class="plus-sign" style="display: none , cursor : pointer;">+</span><span class="plus-sign">–</span>'
-            return f'<tr class="expandable-row RowClass5" style="display: none; color:#fff; background-color:{color_RowClass5}"><td class="RowClass5">'
+            if (number_of_dec < next_number_of_dec):                   #If Row has Child Rows make it expandable
+                return '''<tr class="MDrow1 expandable-row expand-next-row RowClass5">
+                            <td class="MDrow1">
+                                <span class="plus-sign" style="display: none;">+ </span>
+                                <span class="plus-sign">– </span>'''
+            return '''<tr class="expandable-row RowClass5">
+                        <td class="RowClass5">'''
         else:
-            return f'<tr class="">'
+            return '''<tr class="">'''
     else:                                                            #Header Row
-        return f'<tr class="Header1row RowClass2" style="background-color:{color_RowClass1}"><td class="">{cellValue}'
+        return f'''<tr class="Header1row RowClass2">
+                        <td class="">{cellValue}'''
 
 
 #Read orignal html file, for embedding new table

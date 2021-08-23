@@ -1,0 +1,47 @@
+.MDrow1.RowClass2.expand-next-row{
+    background-color: #eaece5;
+}
+
+.MDrow.RowClass2{
+    background-color: #eaece5
+}
+
+.MDrow1.expandable-row.expand-next-row.RowClass3{
+    display: none;
+    background-color: #ddeedd; 
+}
+
+.expandable-row.RowClass3{
+    display: none;
+    background-color: #ddeedd;
+}
+
+.MDrow1.expandable-row.expand-next-row.RowClass4{
+    display: none; 
+    background-color: #c0ded9;
+}
+
+.expandable-row.RowClass4{
+    display: none; 
+    background-color: #c0ded9;
+}
+
+.MDrow1.expandable-row.expand-next-row.RowClass5{
+    display: none; 
+    color:#fff; 
+    background-color: #3b3a30
+}
+
+.expandable-row.RowClass5{
+    display: none; 
+    color:#fff; 
+    background-color: #3b3a30
+}
+
+.Header1row.RowClass2{
+    background-color: #77a8a8;
+}
+
+.plus-sign{
+    cursor : pointer;
+}
