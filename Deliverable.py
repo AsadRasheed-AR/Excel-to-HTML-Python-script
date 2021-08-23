@@ -123,32 +123,13 @@ for num , tag in enumerate(tags):
 for tr in new_soup.find_all("tr"): 
     tr.decompose()
 
-#Add new rows in table with formatting (Custom classes)
+#Add new rows in table generated from Excel with formatting (Custom classes)
 for tag in tags:
     new_soup.tbody.append(tag)
 
+#Replace Existing table of sorce html file with the newly generated table from excel
 soup.find("table",{"class": "mainTable"}).replace_with(new_soup)
 
-# #remove rows from the html file to add new rows with modifications
-# for tr in soup.find_all("tr"):
-#     tbody = tr.parent
-#     try:
-#         table = tbody.parent
-#         if table.has_attr('class'):
-#             if table['class'][0] == 'mainTable':
-#                 tr.decompose()
-#     except:
-#         pass
-
-# #Add new rows in table inside html with modifications (Custom classes)
-# for tag in tags:
-#     try:
-#         table = soup.tbody.parent
-#         if table.has_attr('class'):
-#                 if table['class'][0] == 'mainTable':
-#                     soup.tbody.append(tag)
-#     except:
-#         pass
 
 #Generate Output Html File
 new_html =soup.contents
