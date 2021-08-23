@@ -3,6 +3,7 @@
 
 #Import Necessary Libraries
 
+from typing import cast
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -65,6 +66,9 @@ file_path = 'example-page.html'
 with open(file_path) as fp:
     soup = BeautifulSoup(fp, 'html.parser')
 
+# soup = soup.find("table",{"class": "mainTable"})
+
+
 #Input File (Excel or CSV) to parse for creating html Table.
 filename = 'LstMetadataprofiltest_formatted.xlsx'
 
@@ -123,13 +127,28 @@ for tr in new_soup.find_all("tr"):
 for tag in tags:
     new_soup.tbody.append(tag)
 
-#remove rows from the html file to add new rows with modifications
-for tr in soup.find_all("tr"): 
-    tr.decompose()
+soup.find("table",{"class": "mainTable"}).replace_with(new_soup)
 
-#Add new rows in table inside html with modifications (Custom classes)
-for tag in tags:
-    soup.tbody.append(tag)
+# #remove rows from the html file to add new rows with modifications
+# for tr in soup.find_all("tr"):
+#     tbody = tr.parent
+#     try:
+#         table = tbody.parent
+#         if table.has_attr('class'):
+#             if table['class'][0] == 'mainTable':
+#                 tr.decompose()
+#     except:
+#         pass
+
+# #Add new rows in table inside html with modifications (Custom classes)
+# for tag in tags:
+#     try:
+#         table = soup.tbody.parent
+#         if table.has_attr('class'):
+#                 if table['class'][0] == 'mainTable':
+#                     soup.tbody.append(tag)
+#     except:
+#         pass
 
 #Generate Output Html File
 new_html =soup.contents
