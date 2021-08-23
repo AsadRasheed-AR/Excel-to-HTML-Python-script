@@ -41,19 +41,19 @@ def getClassname(number_of_dec,next_number_of_dec,cellValue):
     if(hasNumbers(cellValue)):
         if ((number_of_dec == 0)):                                     #Whole Number
             if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 RowClass2 expand-next-row" style="background-color:{color_RowClass2}" ><td class="MDrow1"><span class="plus-sign">+</span><span class="plus-sign" style="display: none;">–</span>'
+                return f'<tr class="MDrow1 RowClass2 expand-next-row" style="background-color:{color_RowClass2}" ><td class="MDrow1"><span class="plus-sign" style="cursor : pointer;">+</span><span class="plus-sign" style="display: none;">–</span>'
             return f'<tr class="MDrow RowClass2" style="background-color:{color_RowClass2}"><td class="MDrow1">'
         elif number_of_dec == 1:                                       #One Decimel
             if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass3" style="display: none; background-color:{color_RowClass3}"><td class="MDrow1"><span class="plus-sign" style="display: none;">+</span><span class="plus-sign">–</span>'
+                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass3" style="display: none; background-color:{color_RowClass3}"><td class="MDrow1"><span class="plus-sign" style="display: none, cursor : pointer;;">+</span><span class="plus-sign">–</span>'
             return f'<tr class="expandable-row RowClass3" style="display: none; background-color:{color_RowClass3}"><td class="MDrow1">'
         elif number_of_dec == 2:                                       #Two Decimel
             if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass4" style="display: none; background-color:{color_RowClass4}"><td class="MDrow1"><span class="plus-sign" style="display: none;">+</span><span class="plus-sign">–</span>'
+                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass4" style="display: none; background-color:{color_RowClass4}"><td class="MDrow1"><span class="plus-sign" style="display: none , cursor : pointer;;">+</span><span class="plus-sign">–</span>'
             return f'<tr class="expandable-row RowClass4" style="display: none; background-color:{color_RowClass4}"><td class="MDrow4">'
         elif number_of_dec == 3:                                       #Three Decimel
             if (number_of_dec < next_number_of_dec):
-                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass5" style="display: none; color:#fff; background-color:{color_RowClass5}" ><td class="MDrow1"><span class="plus-sign" style="display: none;">+</span><span class="plus-sign">–</span>'
+                return f'<tr class="MDrow1 expandable-row expand-next-row RowClass5" style="display: none; color:#fff; background-color:{color_RowClass5}" ><td class="MDrow1"><span class="plus-sign" style="display: none , cursor : pointer;">+</span><span class="plus-sign">–</span>'
             return f'<tr class="expandable-row RowClass5" style="display: none; color:#fff; background-color:{color_RowClass5}"><td class="RowClass5">'
         else:
             return f'<tr class="">'
@@ -79,9 +79,10 @@ elif '.xlsx' in filename:
     #Read Excel File to create html table
     df = pd.read_excel(filename,header=None,encoding= "ISO-8859-1")
 
-df = df[[0,1,33,34,35]]         #Select the specific columns (including first column that defines the hierarchy) to create table
-df = df.dropna(how='all')       #Select the empty rows
-df = df.reset_index(drop=True)  #Remove the empty rows
+df = df[df[len(df.columns)-1] != 1]  #Remove rows based on column values i.e If Last Column (Remove_Rows) value is 1 remove complete row ignore.
+df = df[[0,1,33,34,35]]              #Select the specific columns (including first column that defines the hierarchy) to create table
+df = df.dropna(how='all')            #Select the empty rows
+df = df.reset_index(drop=True)       #Remove the empty rows
 
 
 #Choose columns with data and ignore the class column
