@@ -50,7 +50,7 @@ x.x.x (child of list item two)
 
 - HTML File : example-page.html -> python scrip will use this file and add the newly generated table into this file.
 - LstMetadataprofiltest_formatted.xlsx -> Python script will use this file to generate table and then replace the newly generated table in the html file.
-- Deliverable.py -> Python script which contains the code for Excel to Html Parsing.
+- MetaProfileDoc.py -> Python script which contains the code for Excel to Html Parsing.
 
 ## Requirements (Dependencies):
 
@@ -66,14 +66,14 @@ x.x.x (child of list item two)
 #### Note: If the html and excel file is in the same directory then only the name of the files can be used instead of complete path, For Example,
 
 ```
-python Deliverable.py -html example-page.html -excel LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
+python MetaProfileDoc.py -html example-page.html -excel LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
 ```
 #### Where 0,1,33,34,35 are the required columns, You can pass required column's numbers as comma delimited numbers but 0 is mandatory column because it contains information regarding formatting of rows
 
 #### Note: If the html and excel file is not in the same directory then complete path for the files should provide to run the script, For Example,
 
 ```
-python Deliverable.py --html E:\<path to html file>\example-page.html --excel E:\<path to excel file>\LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
+python MetaProfileDoc.py --html E:\<path to html file>\example-page.html --excel E:\<path to excel file>\LstMetadataprofiltest_formatted.xlsx -config 0,1,33,34,35
 ```
 
 #### 'LstMetadataprofiltest_formatted.xlsx' (Excel File) can be used as a reference to generate tables correctly, However 'LstMetadataprofiltest.csv' contains same data but some errors that should be avoided. You can compare both files to see the difference.
