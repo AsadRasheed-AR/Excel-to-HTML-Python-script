@@ -7,17 +7,9 @@
 
 ## File paths:
 
-- In python script, On Line no 64 'file_path' variable is used where "HTML" file path can be entered. See the example below:
-```
-file_path = 'example-page.html'
-```
-In this example, python script will use HTML file named 'example-page.html'
+- File paths will be passed as command line arguments with -html flag for html file path and -excel flag for excel file path and -config flag for required columns in the output table. Please see the section "How to run the code" for better understanding of paths. 
 
-- In python script, On Line no 69 'filename' variable is used where "Excel or Csv" file path can be entered. See the example below:
-```
-filename = 'LstMetadataprofiltest_formatted.xlsx'
-```
-In this example, python script will use Excel file named 'LstMetadataprofiltest_formatted.xlsx'
+- NOTE: If excel and html files are in the same directory then onlu file name can be passed with extension, If the html and excel files are not in the same directory as python script then complete path is required.
 
 ## Row Colors Formatting:
 - In Python script, Following colors are used for different levels of hierarchy(Rows).
